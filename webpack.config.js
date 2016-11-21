@@ -1,14 +1,17 @@
+var path = require('path');
+
 module.exports = {
   entry: [
     './src/index.js'
   ],
   output: {
-    path: __dirname,
+    path:__dirname,
     publicPath: '/',
     filename: 'bundle.js'
   },
   module: {
     loaders: [{
+      test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel',
       query: {
@@ -21,6 +24,7 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    contentBase: './'
+    contentBase: './',
+    inline: true
   }
 };
