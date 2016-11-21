@@ -6,6 +6,7 @@ class BookDetail extends Component {
     if (!this.props.book) {
       return <div>Select a book to get started.</div>;
     }
+
     return (
       <div>
         <h3>Detail for: </h3>
@@ -17,7 +18,7 @@ class BookDetail extends Component {
 
 function mapStateToProps(state) {
   return {
-    activedBook: state.activedBook
+    book: state.activedBook
   };
 }
 
